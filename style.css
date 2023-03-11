@@ -1,0 +1,245 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+    min-height: 100%;
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--Pale-blue);
+}
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+
+:root {
+    /* Primary */
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+
+    /* Gradients */
+    --Light-slate-blue-background: hsl(252, 100%, 67%);
+    --Light-royal-blue-background: hsl(241, 81%, 54%);
+
+    --Violet-blue-circle: hsla(256, 72%, 46%, 1);
+    --Persian-blue-circle: hsla(241, 72%, 46%, 0);
+
+
+    /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+}
+article {
+    border-radius: 1.25rem;
+    background-color: var(--White);
+}
+
+.result {
+    background-image: linear-gradient(to bottom, var(--Light-slate-blue-background), var(--Light-royal-blue-background));
+    /* background-color: var(--Cobalt-blue); */
+    color: var(--White);
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    padding: 20px;
+}
+
+.result div h1 {
+    font-size: 2.5rem;
+    color: var(--Light-lavender);
+}
+
+.result div small {
+    color: var(--Light-lavender);
+}
+
+.result p {
+    color: var(--Pale-blue);
+    font-size: 1.25rem;
+}
+
+.result .txt {
+    font-size: 1rem;
+    margin: 1rem 6rem;
+    color: var(--Light-lavender);
+}
+
+.result div {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    margin: 25px auto;
+    background-image: linear-gradient(var(--Violet-blue-circle), var(--Persian-blue-circle));
+}
+.summary{
+    padding-bottom: 0.625rem;
+}
+.summary h1 {
+    margin: 1rem 2rem;
+    color: var(--Dark-gray-blue);
+}
+
+.items {
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.items:nth-child(2) {
+    background-color: hsla(0, 100%, 67%, 0.1);
+}
+
+.items:nth-child(2) .item p {
+    color: hsl(0, 100%, 67%);
+}
+
+.items:nth-child(3) {
+    background-color: hsla(39, 100%, 56%, 0.1);
+}
+
+.items:nth-child(3) .item p {
+    color: var(--Orangey-yellow)
+}
+
+.items:nth-child(4) {
+    background-color: hsla(166, 100%, 37%, 0.1);
+}
+
+.items:nth-child(4) .item p {
+    color: var(--Green-teal);
+}
+
+.items:nth-child(5) {
+    background-color: hsla(234, 85%, 45%, 0.1);
+}
+
+.items:nth-child(5) .item p {
+    color: var(--Cobalt-blue);
+}
+
+.items .item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.items .item p {
+    font-weight: 700;
+}
+
+.items span {
+    font-size: 0.875rem;
+    color: var(--Dark-gray-blue);
+}
+
+button {
+    width: 90%;
+    display: grid;
+    place-items: center;
+    margin: 1.25rem auto;
+    padding: 0.625rem 1.25rem;
+    border-radius: 1.25rem;
+    border: 0;
+    outline: 0;
+    background-color: var(--Dark-gray-blue);
+    color: var(--White);
+    cursor: pointer;
+}
+
+button:hover {
+    background-image: linear-gradient(to bottom, var(--Light-slate-blue-background), var(--Light-royal-blue-background));
+}
+
+@media screen and (min-width:700px) {
+    main {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    article {
+        width: 70%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    }
+    .result{
+        border-radius: 1.25rem;
+        flex: 1;
+    }
+    .summary{
+        flex: 1;
+    }
+}
